@@ -5,7 +5,7 @@ const todosRoutes = require('./routes/todos');
 
 const PORT = process.env.PORT || 3000;
 
-const app = express()
+const app = express();
 const hbs = exphbs.create({
     defaultLayout: 'main',
     extname: 'hbs'
@@ -19,10 +19,12 @@ app.use(todosRoutes);
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://Ihar:<228228>@cluster0-k5nes.mongodb.net/todos', {
-            useNewUrlParser: true,
-            useFindAndModify: false
-        });
+        await mongoose.connect(
+            'mongodb+srv://Ihar:228228@cluster0-k5nes.mongodb.net/test?retryWrites=true&w=majority',
+            {
+                useNewUrlParser: true,
+                useFindAndModify: false
+            });
         app.listen(PORT, () => {
             console.log('Server has been started...')
         });
