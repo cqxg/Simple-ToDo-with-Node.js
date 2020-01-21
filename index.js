@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
+const todosRoutes = require('./routes/todos');
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,6 +14,8 @@ const hbs = exphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
+
+app.use(todosRoutes);
 
 async function start() {
     try {
