@@ -2,7 +2,7 @@
     margin-bottom: 1rem;
 }
 
-.todo span.comleted {
+.todo span.completed {
     text-decoration: line-through;
 }
 
