@@ -15,6 +15,8 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(todosRoutes);
 
 async function start() {
@@ -28,8 +30,8 @@ async function start() {
         app.listen(PORT, () => {
             console.log('Server has been started...')
         });
-    } catch (e) {
-        console.log(e);
+    } catch (err) {
+        console.log(err);
     };
 };
 
