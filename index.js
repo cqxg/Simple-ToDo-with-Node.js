@@ -16,7 +16,7 @@ app.set('views', 'views');
 
 async function start() {
     try {
-        await mongoose.connect('', {
+        await mongoose.connect('mongodb+srv://Ihar:<228228>@cluster0-k5nes.mongodb.net/todos', {
             useNewUrlParser: true,
             useFindAndModify: false
         });
